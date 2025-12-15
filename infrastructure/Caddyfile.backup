@@ -1,11 +1,11 @@
 # Global options
 {
     email admin@hayks.world
-   # admin off
+    admin off
 }
 
 # Main website
-www.hayks.world, hayks.world, blog.hayks.world {
+www.hayks.world {
     reverse_proxy static-site:80
     
     encode gzip
@@ -24,17 +24,6 @@ www.hayks.world, hayks.world, blog.hayks.world {
         }
     }
 }
-
-
-#hayks.world {
-#    reverse_proxy static-site:80
-#}
-#
-#blog.hayks.world {
-#    reverse_proxy static-site:}
-
-
-
 
 # pgAdmin Database Management Interface
 # SECURITY: This should NOT be publicly accessible in production
@@ -67,25 +56,6 @@ db.hayks.world {
             roll_keep 5
         }
     }
-}
-
-# API Backend
-api.hayks.world {
-    reverse_proxy backend:3000
-    encode gzip
-
-    header {
-        X-Frame-Options "DENY"
-        X-Content-Type-Options "nosniff"
-    }
-
-    log {
-        output file /var/log/caddy/api.log {
-            roll_size 10MB
-            roll_keep 5
-        }
-    }
-
 }
 
 # Template for student sites

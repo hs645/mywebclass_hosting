@@ -43,7 +43,7 @@ services:
     # Security: Do NOT expose port 5432 to host
     # Projects connect via internal network only
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dbadmin}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-dbadmin} -d ${POSTGRES_DB:-production} || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3

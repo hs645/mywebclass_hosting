@@ -19,9 +19,9 @@
 #    external: true
 
 services:
-  static-site:
+  blog:
     build: .
-    container_name: static-site
+    container_name: blog
     restart: unless-stopped
     networks:
       - web

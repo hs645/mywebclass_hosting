@@ -97,15 +97,7 @@
         <p class="subtitle">Production-Ready Hosting Platform</p>
         
         <div class="status">✓ System Online</div>
-        
-	<div class="features">
-	    <div class="feature">
-		<section id="users">
-    		<h2>Users from API</h2>
-    		<div id="user-list">Loading...</div>
-		</section>
-	    </div>
-
+        <img src="/images/hero.jpg" alt="Hero Image">
         <div class="features">
             <div class="feature">
                 <div class="feature-icon">🔒</div>
@@ -137,24 +129,5 @@
             <p>Learn more at <strong>github.com/kaw393939/mywebclass_hosting</strong></p>
         </div>
     </div>
-
-
-<script>
-// Fetch users from API
-fetch('https://api.hayks.world/api/users')
-  .then(response => response.json())
-  .then(users => {
-    const userList = document.getElementById('user-list');
-    userList.innerHTML = users.map(user => `
-      <div class="user">
-        <strong>${user.name}</strong> - ${user.email}
-      </div>
-    `).join('');
-  })
-  .catch(error => {
-    console.error('Error fetching users:', error);
-    document.getElementById('user-list').innerHTML = 'Error loading users';
-  });
-</script>
 </body>
 </html>
